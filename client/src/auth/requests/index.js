@@ -10,11 +10,40 @@
     @author McKilla Gorilla
 */
 
-import axios from 'axios'
-axios.defaults.withCredentials = true;
-const api = axios.create({
-    baseURL: 'http://localhost:4000/auth',
-})
+const baseURL =  'http://localhost:4000/auth';
+
+async function request(method, url, data)
+{
+    let payload = {
+        method: method,
+        mode: 'cors',  
+        cache: 'no-cache',  
+        credentials: 'include',  
+        headers: {  
+            'Content-Type': 'application/json'  
+        },  
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer', 
+    }
+    if (data)
+        payload['body'] = JSON.stringify(data);
+
+    const response = await fetch(baseURL + url, payload);
+
+    // create an object similar in structure to an axios response
+    const responseObject = {
+        status: response.status,
+    }
+    if (response.headers.get("content-length") != 0)
+    {
+        responseObject["data"] = await response.json();
+    }
+
+    return responseObject;
+}
+
+
+
 
 // THESE ARE ALL THE REQUESTS WE`LL BE MAKING, ALL REQUESTS HAVE A
 // REQUEST METHOD (like get) AND PATH (like /register). SOME ALSO
@@ -23,16 +52,16 @@ const api = axios.create({
 // WE NEED TO PUT THINGS INTO THE DATABASE OR IF WE HAVE SOME
 // CUSTOM FILTERS FOR QUERIES
 
-export const getLoggedIn = () => api.get(`/loggedIn/`);
+export const getLoggedIn = () => request('GET', `/loggedIn/`);
 export const loginUser = (email, password) => {
-    return api.post(`/login/`, {
+    return request('POST', `/login/`, {
         email : email,
         password : password
     })
 }
-export const logoutUser = () => api.get(`/logout/`)
+export const logoutUser = () => request('GET', `/logout/`)
 export const registerUser = (firstName, lastName, email, password, passwordVerify) => {
-    return api.post(`/register/`, {
+    return request('POST', `/register/`, {
         firstName : firstName,
         lastName : lastName,
         email : email,
