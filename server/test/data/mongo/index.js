@@ -19,15 +19,18 @@ async function fillCollection(collection, collectionName, data) {
 }
 
 async function resetMongo() {
-    const Playlist = require('../../../models/playlist-model')
-    const User = require("../../../models/user-model")
+    const {PlaylistSchemaMongo} = require('../../../models/playlist-model')
+    const {UserSchemaMongo} = require("../../../models/user-model")
     const testData = require("../example-db-data.json")
 
+    const PlaylistModel = mongoose.model('Playlist', PlaylistSchemaMongo)
+    const UserModel = mongoose.model('User', UserSchemaMongo)
+
     console.log("Resetting the Mongo DB")
-    await clearCollection(Playlist, "Playlist");
-    await clearCollection(User, "User");
-    await fillCollection(Playlist, "Playlist", testData.playlists);
-    await fillCollection(User, "User", testData.users);
+    await clearCollection(PlaylistModel, "Playlist");
+    await clearCollection(UserModel, "User");
+    await fillCollection(PlaylistModel, "Playlist", testData.playlists);
+    await fillCollection(UserModel, "User", testData.users);
 }
 
 const mongoose = require('mongoose')
