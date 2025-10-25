@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
 
-const UserSchema = new Schema(
+const UserSchemaMongo = new Schema(
     {
         firstName: { type: String, required: true },
         lastName: { type: String, required: true },
@@ -13,4 +13,7 @@ const UserSchema = new Schema(
     { timestamps: true },
 )
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = 
+{
+    UserSchemaMongo: UserSchemaMongo
+}

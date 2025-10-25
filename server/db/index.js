@@ -1,15 +1,11 @@
 
 const mongoose = require('mongoose')
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
+const MongoDatabaseManager = require('./mongo');
 dotenv.config();
 
-mongoose
-    .connect(process.env.DB_CONNECT, { useNewUrlParser: true })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
+const db = new MongoDatabaseManager();
 
-const db = mongoose.connection
 
 module.exports = db
 

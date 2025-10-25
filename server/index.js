@@ -26,7 +26,7 @@ app.use('/store', storeRouter)
 
 // INITIALIZE OUR DATABASE OBJECT
 const db = require('./db')
-db.on('error', console.error.bind(console, 'Database connection error:'))
+db.connection.on('error', console.error.bind(console, 'Database connection error:')) // TODO: modify
 
 // PUT THE SERVER IN LISTENING MODE
 app.listen(PORT, () => console.log(`Playlister Server running on port ${PORT}`))

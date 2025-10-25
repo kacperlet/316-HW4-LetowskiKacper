@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
     
     @author McKilla Gorilla
 */
-const playlistSchema = new Schema(
+const PlaylistSchemaMongo = new Schema(
     {
         name: { type: String, required: true },
         ownerEmail: { type: String, required: true },
@@ -20,4 +20,7 @@ const playlistSchema = new Schema(
     { timestamps: true },
 )
 
-module.exports = mongoose.model('Playlist', playlistSchema)
+module.exports = 
+{
+    PlaylistSchemaMongo: PlaylistSchemaMongo
+}
