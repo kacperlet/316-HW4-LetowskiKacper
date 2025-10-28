@@ -72,19 +72,16 @@ async function resetPostgres(sequelize) {
 
 const { Sequelize } = require('sequelize');
 
-let password = process.env.POSTGRE_PASSWORD;
-if (!password)
+let dbURI = process.env.DB_CONNECT_POSTGRE;
+if (!dbURI)
 {
-    console.log("POSTGRE_PASSWORD not set in .env file");
+    console.log("DB_CONNECT_POSTGRE not set in .env file");
     console.log("aborting...");
     return;
 }
 
 console.log("Attempting to connect...");
-const sequelize = new Sequelize('playlister', 'postgres', password, {
-    host: 'localhost',
-    dialect: 'postgres'
-});
+const sequelize = new Sequelize(dbURI);
 
 resetPostgres(sequelize);
 
