@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
+const { Sequelize, DataTypes } = require('sequelize');
 
 const UserSchemaMongo = new Schema(
     {
@@ -13,7 +14,42 @@ const UserSchemaMongo = new Schema(
     { timestamps: true },
 )
 
+const UserSchemaPostgre = 
+{
+    _id : {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4, // Auto-generates id
+        primaryKey: true,
+    },
+    firstName: {
+        type: DataTypes.STRING, 
+        allowNull: false
+    },
+    lastName: {
+        type: DataTypes.STRING, 
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING, 
+        allowNull: false
+    },
+    passwordHash: {
+        type: DataTypes.STRING, 
+        allowNull: false
+    },
+    playlists: {
+        type: DataTypes.ARRAY(DataTypes.UUID)
+    }
+}
+
+const UserOptionsPostgre =
+{
+    timestamps: true
+}
+
 module.exports = 
 {
-    UserSchemaMongo: UserSchemaMongo
+    UserSchemaMongo: UserSchemaMongo,
+    UserSchemaPostgre: UserSchemaPostgre,
+    UserOptionsPostgre: UserOptionsPostgre
 }
