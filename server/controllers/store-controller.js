@@ -34,6 +34,10 @@ createPlaylist = async (req, res) => {
     if (user)
     {
         console.log("user found: " + JSON.stringify(user));
+        if (!user.playlists)
+        {
+            user.playlists = [];
+        }
         user.playlists.push(playlist._id);
         db.User.updateById(user._id, {playlists: user.playlists})
             .then(() => {
