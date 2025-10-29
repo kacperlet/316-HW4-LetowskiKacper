@@ -18,6 +18,17 @@
             "playlists": [
                 "68f526c4ec1ea2ad00a6fae8"
             ]
+        },
+        {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@doe.com",
+            "passwordHash": "$2a$10$ywk52ZU36x3M0NolrlNm3./A6vQOdEd4AbxAocJ8ZtXcP842DE5EG",
+            "playlists": [
+                "690194f03181364c3caead9b",
+                "690195003181364c3caeadaf",
+                "690195133181364c3caeadd1"
+            ]
         }
     ],
     "playlists": [
@@ -208,6 +219,92 @@
                     "year": 1979,
                     "youTubeId": "uEK9oK02D1M"
                 }
+            ]
+        },
+        {
+            "_id": "690194f03181364c3caead9b",
+            "ownerEmail": "john@doe.com",
+            "name":"Old Songs",
+            "songs":
+            [
+                { "title": "Hooked on a Feeling", "artist": "Blue Swede & Björn Skifs", "year": 1974, "youTubeId": "l6DepmNwbn8" },
+                { "title": "Immigrant Song", "artist": "Led Zeppelin", "year": 1970, "youTubeId": "P3Y8OWkiUts" },
+                { "title": "Renegade", "artist": "Styx", "year": 1978, "youTubeId": "E9eLz4DrwF8" },
+                { "title": "Pressure", "artist": "Billy Joel", "year": 1982, "youTubeId": "Iyv905Q2omU" },
+                { "title": "We Are the People", "artist": "Empire of the Sun", "year": 2008, "youTubeId": "4WOcJRLWWZY" },
+                { "title": "Like a Prayer", "artist": "Madonna", "year": 1989, "youTubeId": "79fzeNUqQbQ" },
+                { "title": "Material Girl", "artist": "Madonna", "year": 1984, "youTubeId": "6p-lDYPR2P8" },
+                { "title": "All That She Wants", "artist": "Ace of Base", "year": 1993, "youTubeId": "d73tiBBzvFM" },
+                { "title": "Fantasy", "artist": "Mariah Carey", "year": 1995, "youTubeId": "qq09UkPRdFY" },
+                { "title": "Lovefool", "artist": "The Cardigans", "year": 1996, "youTubeId": "NI6aOFI7hms" },
+                { "title": "...Baby One More Time", "artist": "Britney Spears", "year": 1998, "youTubeId": "C-u5WLJ9Yk4" },
+                { "title": "Cherry Bomb", "artist": "The Runaways", "year": 1976, "youTubeId": "q9dvwVMsGn8" },
+                { "title": "Deceptacon", "artist": "Le Tigre", "year": 1999, "youTubeId": "VG9UJJposmg" },
+                { "title": "Carry On Wayward Son", "artist": "Kansas", "year": 1976, "youTubeId": "P5ZJui3aPoQ" },
+                { "title": "Be My Baby", "artist": "The Ronettes", "year": 1963, "youTubeId": "e-dr1PZZMds" },
+                { "title": "Message in a Bottle", "artist": "The Police", "year": 1979, "youTubeId": "MbXWrmQW-OE" },
+                { "title": "Wish You Were Here", "artist": "Pink Floyd", "year": 1975, "youTubeId": "IXdNnw99-Ic" },
+                { "title": "Yellow Submarine", "artist": "The Beatles", "year": 1966, "youTubeId": "ztHxu-13UqI" },
+                { "title": "Master of Puppets", "artist": "Metallica", "year": 1986, "youTubeId": "6xjJ2XIbGRk" },
+                { "title": "Ring of Fire", "artist": "Johnny Cash", "year": 1963, "youTubeId": "5WyLhwYFgmk" }
+
+            ]
+        },
+        {
+            "_id": "690195003181364c3caeadaf",
+            "ownerEmail": "john@doe.com",
+            "name":"Favorite Songs",
+            "songs":
+            [
+                { "title": "The Real Slim Shady", "artist": "Eminem", "year": 2000, "youTubeId": "eJO5HU_7_1w" },
+                { "title": "To Ashes and Blood", "artist": "Woodkid", "year": 2024, "youTubeId": "HFVM4QE1qBA" },
+                { "title": "Without Me", "artist": "Eminem", "year": 2002, "youTubeId": "6NXmi5heHdU" },
+                { "title": "Stronger", "artist": "Kanye West", "year": 2007, "youTubeId": "PsO6ZnUZI0g" },
+                { "title": "Dynasties and Dystopia", "artist": "Denzel Curry", "year": 2024, "youTubeId": "atx7AlYB_z4" },
+                { "title": "Feel Good Inc.", "artist": "Gorillaz", "year": 2005, "youTubeId": "HyHNuVaZJ-k" },
+                { "title": "Feel It", "artist": "d4vd", "year": 2024, "youTubeId": "3hgabcFcp4A" },
+                { "title": "One More Hour", "artist": "Tame Impala", "year": 2019, "youTubeId": "Y0U6u2D8cMU" },
+                { "title": "undressed", "artist": "sombr", "year": 2025, "youTubeId": "z0wT6CrEGYg" },
+                { "title": "Let It Happen", "artist": "Tame Impala", "year": 2015, "youTubeId": "NMRhx71bGo4" },
+                { "title": "Sunflower", "artist": "Post Malone", "year": 2018, "youTubeId": "ApXoWvfEYVU" },
+                { "title": "it boy", "artist": "bbno$", "year": 2024, "youTubeId": "QuvqzlxEO6g" },
+                { "title": "I Wonder", "artist": "Kanye West", "year": 2007, "youTubeId": "MxEjnYdfLXU" },
+                { "title": "Breezeblocks", "artist": "alt-J (∆)", "year": 2012, "youTubeId": "rVeMiVU77wo" },
+                { "title": "Make You Mine", "artist": "Madison Beer", "year": 2018, "youTubeId": "XFR7v5ix5hU" },
+                { "title": "i like the way you kiss me", "artist": "Artemas", "year": 2024, "youTubeId": "jVBsM8CM0AE" },
+                { "title": "End Of Beginning", "artist": "Djo", "year": 2022, "youTubeId": "xy3AcmW0lrQ" },
+                { "title": "Instant Crush", "artist": "Daft Punk", "year": 2013, "youTubeId": "a5uQMwRMHcs" },
+                { "title": "Daylight", "artist": "Joji", "year": 2020, "youTubeId": "9ilzBk0M4r4" },
+                { "title": "Am I Dreaming", "artist": "Metro Boomin, A$AP Rocky & Roisee", "year": 2023, "youTubeId": "7aUZtDaxS60" }
+            ]
+        },
+        {
+            "_id": "690195133181364c3caeadd1",
+            "ownerEmail": "john@doe.com",
+            "name":"Interesting Songs",
+            "songs":    
+            [
+                { "title": "Welcome to the Internet", "artist": "Bo Burnham", "year": 2021, "youTubeId": "CLW3FnDa1nQ" },
+                { "title": "Darude - Sandstorm", "artist": "Darude", "year": 1999, "youTubeId": "y6120QOlsfU" },
+                { "title": "My Way", "artist": "Jschlatt", "year": 2024, "youTubeId": "0uksSl1Teek" },
+                { "title": "Revolution 9", "artist": "The Beatles", "year": 2009, "youTubeId": "SNdcFPjGsm8" },
+                { "title": "Space Oddity", "artist": "David Bowie", "year": 1969, "youTubeId": "iYYRH4apXDo" },
+                { "title": "Roundabout (2008 Remaster) / Roundabout", "artist": "Yes", "year": 1971, "youTubeId": "cPCLFtxpadE" },
+                { "title": "Axel F (Crazy Frog)", "artist": "Crazy Frog", "year": 2005, "youTubeId": "k85mRPqvMbE" },
+                { "title": "Fat", "artist": "Weird Al Yankovic", "year": 1988, "youTubeId": "gH5UMjMoTVI" },
+                { "title": "Crab Rave", "artist": "Noisestorm", "year": 2018, "youTubeId": "cE0wfjsybIQ" },
+                { "title": "Africa / Toto", "artist": "Toto", "year": 1982, "youTubeId": "dA8QJq_kVCk" },
+                { "title": "Amish Paradise", "artist": "Weird Al Yankovic", "year": 1996, "youTubeId": "lOfZLb33uCg" },
+                { "title": "Steve's Lava Chicken", "artist": "Jack Black", "year": 2025, "youTubeId": "41O_MydqxTU" },
+                { "title": "Super Idol", "artist": "Chí Cường Hứa", "year": 2023, "youTubeId": "n6Hwyq50YWc" },
+                { "title": "Gangnam Style", "artist": "PSY", "year": 2012, "youTubeId": "9bZkp7q19f0" },
+                { "title": "I LUV IT", "artist": "PSY", "year": 2017, "youTubeId": "Xvjnoagk6GU" },
+                { "title": "PPAP (Pen Pineapple Apple Pen)", "artist": "PIKOTARO", "year": 2016, "youTubeId": "NfuiB52K7X8" },
+                { "title": "Fei Yu-ching", "artist": "Yi Jian Mei", "year": 2020, "youTubeId": "UFQkmCDa93o" },
+                { "title": "Waka Waka", "artist": "Shakira", "year": 2010, "youTubeId": "pRpeEdMmmQ0" },
+                { "title": "Virtual Insanity", "artist": "Jamiroquai", "year": 2009, "youTubeId": "4JkIs37a2JE" },
+                { "title": "All Star", "artist": "Smash Mouth", "year": 1999, "youTubeId": "L_jWHffIx5E" }
+
             ]
         }
     ]
