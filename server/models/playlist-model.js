@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 /*
     This is where we specify the format of the data we're going to put into
     the database.

@@ -1,6 +1,5 @@
 import { beforeAll, beforeEach, afterEach, afterAll, expect, test } from 'vitest';
 const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
-const mongoose = require('mongoose')
 
 let db = null;
 
