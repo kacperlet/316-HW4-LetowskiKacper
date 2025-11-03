@@ -19,13 +19,14 @@ async function fillCollection(collection, collectionName, data) {
     console.log(collectionName + " filled");
 }
 
-let promise = null;
-async function confirmation() {
-    await promise;
-    console.log("Fully Reset Mongo Database");
-}
-
 async function resetMongo() {
+    mongoose
+        .connect(process.env.DB_CONNECT_MONGO, { useNewUrlParser: true })
+        .then(() => { })
+        .catch(e => {
+            console.error('Connection error', e.message)
+        })
+
     const {PlaylistSchemaMongo} = require('../../../models/playlist-model')
     const {UserSchemaMongo} = require("../../../models/user-model")
     const testData = require("../example-db-data.json")
@@ -37,16 +38,9 @@ async function resetMongo() {
     await clearCollection(PlaylistModel, "Playlist");
     await clearCollection(UserModel, "User");
     await fillCollection(PlaylistModel, "Playlist", testData.playlists);
-    promise = await fillCollection(UserModel, "User", testData.users);
+    return await fillCollection(UserModel, "User", testData.users);
 }
 
-mongoose
-    .connect(process.env.DB_CONNECT_MONGO, { useNewUrlParser: true })
-    .then(() => { resetMongo() })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
 
 
-
-module.exports = confirmation;
+module.exports = resetMongo();

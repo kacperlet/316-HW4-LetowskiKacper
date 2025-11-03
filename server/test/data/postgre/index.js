@@ -37,12 +37,6 @@ function convertToUUID(id)
     return '00000000' + id;
 }
 
-let promise = null;
-async function confirmation() {
-    await promise;
-    console.log("Fully Reset Postgre Database");
-}
-
 async function resetPostgres(sequelize) {
     const testData = require("../example-db-data.json")
     
@@ -73,7 +67,7 @@ async function resetPostgres(sequelize) {
     await clearTable(Playlist, "Playlists");
     await clearTable(User, "Users");
     await fillTable(Playlist, "Playlists", testData.playlists);
-    promise = await fillTable(User, "Users", testData.users);
+    return await fillTable(User, "Users", testData.users);
 }
 
 const { Sequelize } = require('sequelize');
@@ -89,6 +83,4 @@ if (!dbURI)
 console.log("Attempting to connect...");
 const sequelize = new Sequelize(dbURI);
 
-resetPostgres(sequelize);
-
-module.exports = confirmation;
+module.exports = resetPostgres(sequelize);

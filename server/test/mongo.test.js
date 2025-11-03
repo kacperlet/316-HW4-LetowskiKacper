@@ -29,15 +29,15 @@ beforeAll(async () => {
     // RESET DATABASE
     if (process.env.SELECTED_DB === "mongo")
     {
-        console.log("RESETING MONGO");
+        console.log("RESETTING MONGO");
         const confirmation = require("../test/data/mongo");
-        await confirmation();
+        await confirmation;
     }
     else
     {
-        console.log("RESETING POSTGRE");
-        //const confirmation = require("../test/data/postgre");
-        //await confirmation();
+        console.log("RESETTING POSTGRE");
+        const confirmation = require("../test/data/postgre");
+        await confirmation;
     }
     
 });
