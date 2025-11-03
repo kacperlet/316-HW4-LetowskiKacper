@@ -26,7 +26,19 @@ beforeAll(async () => {
     
     db = require("../db/");
 
-    
+    // RESET DATABASE
+    if (process.env.SELECTED_DB === "mongo")
+    {
+        console.log("RESETING MONGO");
+        const confirmation = require("../test/data/mongo");
+        await confirmation();
+    }
+    else
+    {
+        console.log("RESETING POSTGRE");
+        //const confirmation = require("../test/data/postgre");
+        //await confirmation();
+    }
     
 });
 
@@ -194,7 +206,8 @@ test('Test #7) Updating a Playlist from the Database', async () => {
     // MAKE A TEST PLAYLIST TO CREATE IN THE DATABASE
     const testPlaylist = {
         name: "Jazz Music",
-        ownerEmail: "joe@shmo.com"
+        ownerEmail: "joe@shmo.com",
+        songs: []
     };
 
     // CREATE THE PLAYLIST
@@ -216,7 +229,8 @@ test('Test #8) Deleting a Playlist from the Database', async () => {
     // MAKE A TEST PLAYLIST TO CREATE IN THE DATABASE
     const testPlaylist = {
         name: "Classical",
-        ownerEmail: "jane@doe.com"
+        ownerEmail: "jane@doe.com",
+        songs: []
     };
 
     // CREATE THE PLAYLIST
@@ -265,7 +279,8 @@ test('Test #10) Getting Multiple Playlists from the Database', async () => {
     {
         const list = {
             name: listNames[i],
-            ownerEmail: "joe@shmo.com"
+            ownerEmail: "joe@shmo.com",
+            songs: []
         }
 
         await db.Playlist.createNew(list);

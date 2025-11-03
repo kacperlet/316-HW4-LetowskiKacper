@@ -1,4 +1,5 @@
 const dotenv = require('dotenv').config({ path: __dirname + '/../../../.env' });
+const mongoose = require('mongoose')
 
 async function clearCollection(collection, collectionName) {
     try {
@@ -18,6 +19,12 @@ async function fillCollection(collection, collectionName, data) {
     console.log(collectionName + " filled");
 }
 
+let promise = null;
+async function confirmation() {
+    await promise;
+    console.log("Fully Reset Mongo Database");
+}
+
 async function resetMongo() {
     const {PlaylistSchemaMongo} = require('../../../models/playlist-model')
     const {UserSchemaMongo} = require("../../../models/user-model")
@@ -30,10 +37,9 @@ async function resetMongo() {
     await clearCollection(PlaylistModel, "Playlist");
     await clearCollection(UserModel, "User");
     await fillCollection(PlaylistModel, "Playlist", testData.playlists);
-    await fillCollection(UserModel, "User", testData.users);
+    promise = await fillCollection(UserModel, "User", testData.users);
 }
 
-const mongoose = require('mongoose')
 mongoose
     .connect(process.env.DB_CONNECT_MONGO, { useNewUrlParser: true })
     .then(() => { resetMongo() })
@@ -42,3 +48,5 @@ mongoose
     })
 
 
+
+module.exports = confirmation;
