@@ -59,11 +59,6 @@ class MongoDatabaseManager extends DatabaseManager
         return await this.schemas[schema].findByIdAndUpdate(id, updatedFields);
     }
 
-    replaceById = async (schema, id, fields) =>
-    {
-        return await this.schemas[schema].findOneAndReplace({_id:id}, fields);
-    }
-
     deleteById = async (schema, id) =>
     {
         const document = await this.schemas[schema].findByIdAndDelete(id);

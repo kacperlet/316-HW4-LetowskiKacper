@@ -78,11 +78,6 @@ class PostgreDatabaseManager extends DatabaseManager
         return await this.schemas[schema].update(updatedFields, {where: {_id: id}});
     }
 
-    replaceById = async (schema, id, fields) =>
-    {   
-        return await this.updateById(schema, id, fields);
-    }
-
     deleteById = async (schema, id) =>
     {
         const document = await this.schemas[schema].destroy({where: {_id: id}});
