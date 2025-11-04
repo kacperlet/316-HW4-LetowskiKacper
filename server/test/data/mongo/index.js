@@ -27,8 +27,8 @@ async function resetMongo() {
             console.error('Connection error', e.message)
         })
 
-    const {PlaylistSchemaMongo} = require('../../../models/playlist-model')
-    const {UserSchemaMongo} = require("../../../models/user-model")
+    const {PlaylistSchemaMongo} = require('../../../db/mongo/playlist-model')
+    const {UserSchemaMongo} = require("../../../db/mongo/user-model")
     const testData = require("../example-db-data.json")
 
     const PlaylistModel = mongoose.model('Playlist', PlaylistSchemaMongo)

@@ -48,8 +48,8 @@ async function resetPostgres(sequelize) {
         return;
     }
 
-    const {PlaylistSchemaPostgre, PlaylistOptionsPostgre} = require('../../../models/playlist-model')
-    const {UserSchemaPostgre, UserOptionsPostgre} = require("../../../models/user-model")
+    const {PlaylistSchemaPostgre, PlaylistOptionsPostgre} = require('../../../db/postgre/playlist-model')
+    const {UserSchemaPostgre, UserOptionsPostgre} = require("../../../db/postgre/user-model")
 
     const User = sequelize.define(
         'User',

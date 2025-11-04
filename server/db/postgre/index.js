@@ -3,8 +3,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const DatabaseManager = require('../DatabaseManager');
-const { UserSchemaPostgre, UserOptionsPostgre } = require('../../models/user-model');
-const { PlaylistSchemaPostgre, PlaylistOptionsPostgre } = require('../../models/playlist-model');
+const { UserSchemaPostgre, UserOptionsPostgre } = require('../postgre/user-model');
+const { PlaylistSchemaPostgre, PlaylistOptionsPostgre } = require('../postgre/playlist-model');
 
 
 class PostgreDatabaseManager extends DatabaseManager

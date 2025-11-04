@@ -3,8 +3,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const DatabaseManager = require('../DatabaseManager');
-const { UserSchemaMongo } = require('../../models/user-model');
-const { PlaylistSchemaMongo } = require('../../models/playlist-model');
+const { UserSchemaMongo } = require('../mongo/user-model');
+const { PlaylistSchemaMongo } = require('../mongo/playlist-model');
 
 
 class MongoDatabaseManager extends DatabaseManager
